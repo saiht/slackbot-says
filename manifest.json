@@ -1,19 +1,16 @@
 {
-  "name": "Slackbot Says",
-  "version": "0.2.2",
-  "manifest_version": 2,
+  "name": "GithubReviewer bot",
+  "version": "1",
+  "manifest_version": 1,
   "description": "",
   "homepage_url": "https://github.com/smilledge/slackbot-says",
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com 'unsafe-eval'; object-src 'self'",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
   "options_page": "options.html",
   "browser_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "Slackbot says",
+    "default_icon": "icons/icon128.png",
+    "default_title": "GithubReviewer bot",
     "default_popup": "popup.html"
   },
   "permissions": [
