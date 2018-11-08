@@ -14,7 +14,6 @@
         },
 
         initialize: function() {
-            ga('send', 'pageview', '/popup.html');
 
             _.bindAll(this, 'handleChannelFocus', 'handleChannelBlur', 'renderChannels', 'handlePostFormSubmit', 'saveDefaultChannel');
 
@@ -30,7 +29,6 @@
             this.isSubmitting = false;
 
             if (!this.options.get('slackbotUrl')) {
-                ga('send', 'event', 'popup', 'redirect', 'missing slackbot url');
                 chrome.tabs.create({
                     url: chrome.extension.getURL('options.html')
                 });
@@ -46,11 +44,9 @@
             .done(function() {
                 // Worked, save the channel as the default
                 self.saveDefaultChannel(data.channel);
-                ga('send', 'event', 'slack', 'post', 'success');
             })
             .fail(function(jqXHR, textStatus) {
                 console.log('Unable to post message to slack: ' + textStatus);
-                ga('send', 'event', 'slack', 'post', 'fail');
             });
         },
 
